@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>Car ID</th>
+                <th>Car Name</th>
+                <th>Car Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{ car.cid }}</td>
+                <td>{{ car.cname }}</td>
+                <td>{{ car.ccolor }}</td>
+
+         </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <center><a href="/show" class="btn btn-primary">Go back</a></center>
+
+</body>
+
+</html>

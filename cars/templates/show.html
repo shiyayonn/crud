@@ -1,44 +1,53 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <title>Car Records</title>  
-    {% load static %}  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Records</title>
+    {% load static %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-</head>  
-<body>  
-<table>  
-    <thead class="thead-dark">  
-    <tr>  
-        <th>Car ID</th>  
-        <th>Car Name</th>  
-        <th>Car Color</th>  
-        <th>Actions</th>  
-    </tr>  
-    </thead>  
-    <tbody>  
-{% for car in cars %}  
-    <tr>  
-        <td>{{ car.cid }}</td>  
-        <td>{{ car.cname }}</td>  
-        <td>{{ car.ccolor }}</td>  
-        <td>  
+</head>
 
-            <a href="/edit/{{ car.cid }}" class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
-            <a href="/delete/{{ car.cid }}" class="waves-effect waves-light btn"><i class="material-icons">delete_forever</i></a>
-            <a href="/move/{{ car.cid }}" class="waves-effect waves-light btn"><i class="material-icons">swap_vertical_circle</i></a>
+<body>
+    <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>Car ID</th>
+                <th>Car Name</th>
+                <th>Car Color</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{ car.cid }}</td>
+                <td>{{ car.cname }}</td>
+                <td>{{ car.ccolor }}</td>
+                <td>
+
+                    <a href="/edit/{{ car.cid }}" class="waves-effect waves-light btn"><i
+                            class="material-icons">edit</i></a>
+                    <a href="/delete/{{ car.cid }}" class="waves-effect waves-light btn"><i
+                            class="material-icons">delete_forever</i></a>
+                    <a href="/move/{{ car.cid }}" class="waves-effect waves-light btn"><i
+                            class="material-icons">swap_vertical_circle</i></a>
+                 <a href="/filter/{{ car.ccolor }}" class="waves-effect waves-light btn"><i
+                                class="material-icons">find_in_page</i></a>
 
 
+                </td>
 
-        </td>  
-    </tr>  
-{% endfor %}  
-    </tbody>  
-</table>  
-<br>  
-<br>  
-<center><a href="/carview" class="btn btn-primary">Add New Record</a></center>  
-</body>  
-</html>  
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <center><a href="/carview" class="btn btn-primary">Add New Record</a></center>
+
+</body>
+
+</html>

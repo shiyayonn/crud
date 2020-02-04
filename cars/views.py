@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect  
-from cars.forms import CarForm,EditForm,MoveForm
+from cars.forms import CarForm,EditForm,MoveForm,FilterForm
 from cars.models import Car  
 
 # Create your views here.  
@@ -49,4 +49,12 @@ def update(request, id):
     if form.is_valid():  
         form.save()
         return redirect("/show")  
-    return render(request, 'edit.html', {'form': form})  
+    return render(request, 'edit.html', {'form': form})
+
+def filter(request,color):
+    cars = Car.objects.filter(ccolor=color)
+    form = FilterForm(request.POST)
+    if request.method == 'POST':
+        if form.is_vlad():
+            return redirect("/show")
+    return render(request,'filter.html',{'form':form,'cars':cars})
