@@ -1,0 +1,40 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/move/{{ car.cid }}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Move Car</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Car ID:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="cid" id="id_cid" required maxlength="20" value="{{ car.cid }}" disabled />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Car ID to be swapped:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="sid" id="id_sid" required maxlength="20" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Move</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
